@@ -1,0 +1,36 @@
+using System;
+using System.Globalization;
+using System.Threading;
+
+class PlayWithIntDoubleAndString
+{
+    static void Main()
+    {
+        Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+
+        Console.WriteLine("Please choose a type:");
+        Console.WriteLine("1 --> int");
+        Console.WriteLine("2 --> double");
+        Console.WriteLine("3 --> string");
+        int type = int.Parse(Console.ReadLine());
+
+        switch (type)
+        {
+            case 1:
+                Console.WriteLine("Please enter an int:");
+                int enterInt = int.Parse(Console.ReadLine());
+                Console.WriteLine(enterInt + 1);
+                break;
+            case 2:
+                Console.WriteLine("Please enter a double:");
+                double enterDouble = double.Parse(Console.ReadLine());
+                Console.WriteLine(enterDouble + 1.00);
+                break;
+            case 3:
+                Console.WriteLine("Please enter a string:");
+                string enterString = Console.ReadLine();
+                Console.WriteLine(enterString + "*");
+                break;
+        }
+    }
+}
